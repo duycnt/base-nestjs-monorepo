@@ -1,0 +1,13 @@
+{
+  "name": "@libs/modules",
+  "version": "1.0.0",
+  "description": "base modules packages",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": {
+    "name": "Chung Nguyễn Trường Duy",
+    "email": "duycnt.uit@gmail.com"
+  },
+  "license": "ISC"
+}
