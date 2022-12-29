@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common';
-import { EnvModule, IEnvService } from '../../global/env';
+import { AppConfigModule, IAppConfigService } from 'libs/modules/global/config';
 import { JwtService } from './jwt.service';
 import { IJwtService } from './jwt.type';
 
 @Module({
-  imports: [EnvModule],
+  imports: [AppConfigModule],
   providers: [
     {
       provide: IJwtService,
-      useFactory: (env: IEnvService) => new JwtService(env),
-      inject: [IEnvService],
+      useFactory: (config: IAppConfigService) => new JwtService(config),
+      inject: [IAppConfigService],
     },
   ],
   exports: [IJwtService],

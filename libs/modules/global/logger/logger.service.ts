@@ -3,7 +3,7 @@ import { Injectable, InternalServerErrorException, Scope } from '@nestjs/common'
 import pino, { multistream, Logger } from 'pino';
 import { HttpLogger, Options, pinoHttp } from 'pino-http';
 import pinoPretty from 'pino-pretty';
-import { ErrorType, ILoggerService, MessageType } from './logger.type';
+import { ErrorType, ILoggerService, MessageType } from './logger.adapter';
 import { IncomingMessage, ServerResponse } from 'http';
 import { gray, green, isColorSupported, red, yellow } from 'colorette';
 import { PinoRequestConverter } from 'convert-pino-request-to-curl';

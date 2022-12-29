@@ -3,6 +3,7 @@ import { ErrorStatus } from './../core/error';
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus } from '@nestjs/common';
 import { DateTime } from 'luxon';
 import { ApiException, ErrorModel } from './exception';
+import { v4 as uuidv4 } from 'uuid';
 
 @Catch()
 export class AppExceptionFilter implements ExceptionFilter {
@@ -18,7 +19,7 @@ export class AppExceptionFilter implements ExceptionFilter {
         ? exception.getStatus()
         : [exception['status'], HttpStatus.INTERNAL_SERVER_ERROR].find(Boolean);
 
-    exception.traceid = [exception.traceid, request['id']].find(Boolean);
+    exception.traceid = [exception.traceid, request['id'], uuidv4()].find(Boolean);
 
     this.loggerService.error(exception, exception.message, exception.context);
 

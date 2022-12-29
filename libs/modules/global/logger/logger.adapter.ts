@@ -1,4 +1,4 @@
-import { ApiException } from './../../../utils/exception';
+import { ApiException } from '../../../utils/exception';
 import { HttpException } from '@nestjs/common';
 import { HttpLogger } from 'pino-http';
 import { LevelWithSilent } from 'pino';
